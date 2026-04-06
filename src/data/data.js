@@ -14,7 +14,6 @@ import Registry from "../assets/registry.svg";
 import PullRequest from "../assets/pull-request.svg";
 import Profile from "../assets/profile.svg";
 import Gists from "../assets/gists.svg"
-import Organization from "../assets/organization.svg"
 import Enterprises from "../assets/interprices.svg"
 import Sponsors from "../assets/sponsors.svg"
 import Settings from "../assets/settings.svg"
