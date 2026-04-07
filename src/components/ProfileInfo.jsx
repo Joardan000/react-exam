@@ -44,17 +44,9 @@ export default function ProfileInfo() {
 
     async function editProfile(e) {
         e.preventDefault()
-        try {
-            const res = await customApi.patch('/user',
-                { name: seeName, bio: seeBio }
-            )
-            console.log(res.data)
-            setName(seeName)
-            setBio(seeBio)
-            setIsEdit(false)
-        } catch (err) {
-            console.log(err)
-        }
+        setName(seeName)
+        setBio(seeBio)
+        setIsEdit(false)
     }
 
     useEffect(() => {
@@ -92,13 +84,15 @@ export default function ProfileInfo() {
                         </div>
                         <p className="mb-4 text-base text-[14px] text-[rgb(209_215_224)]">{bio}</p>
                         <button
-                            onClick={()=>setIsEdit(true)}
+                            onClick={() => setIsEdit(true)}
                             className="mb-4 px-4 h-8 w-full border border-[rgb(61_68_77)] rounded-[6px] bg-[rgb(42_49_60)] hover:bg-[rgb(47_55_66)] text-center font-medium leading-5 text-[14px] text-[rgb(209_215_224)]">Edit
                             profile
                         </button>
 
-                        <div className="mb-4 flex items-center text-[rgb(145_152_161)] leading-[21px] text-[14px] gap-1">
-                            <a onMouseEnter={() => setFollowersHovered(true)} onMouseLeave={() => setFollowersHovered(false)}
+                        <div
+                            className="mb-4 flex items-center text-[rgb(145_152_161)] leading-[21px] text-[14px] gap-1">
+                            <a onMouseEnter={() => setFollowersHovered(true)}
+                               onMouseLeave={() => setFollowersHovered(false)}
                                className="flex items-center gap-1 hover:text-[rgb(71_139_230)]"
                                href="https://github.com/Joardan000?tab=followers">
                                 <img src={followersHovered ? FollowersBlue : Followers} alt="followers-icon"
@@ -110,7 +104,7 @@ export default function ProfileInfo() {
                                href="https://github.com/Joardan000?tab=following">{seeFollowing} following</a>
                         </div>
                     </>
-                ):(
+                ) : (
                     <>
                         <form onSubmit={editProfile} className="w-full font-sans">
 
@@ -138,20 +132,23 @@ export default function ProfileInfo() {
                                     className="w-full px-3 py-[5px] bg-[rgb(33,40,48)] border border-[rgb(61,68,77)] rounded-[6px] shadow-[rgba(1,4,9,0.24)_0px_1px_0px_0px_inset] text-[rgb(209,215,224)] text-[14px] leading-[21px] resize-y break-words outline-none transition-[color,background-color,box-shadow,border-color] duration-[80ms] ease-[cubic-bezier(0.33,1,0.68,1)] placeholder:text-[rgb(145,152,161)] focus:border-[rgb(71_139_230)] focus:ring-1 focus:ring-[rgb(71_139_230)]"
                                 />
                                 <p className="text-[11.5px] text-[rgb(145_152_161)] mt-1 leading-[18px]">
-                                    You can <span className="font-semibold">@mention</span> other users and organizations to link to them.
+                                    You can <span className="font-semibold">@mention</span> other users and
+                                    organizations to link to them.
                                 </p>
                             </div>
                             <div className="flex items-center gap-1 py-4">
 
-                                <button type="submit" className="inline-flex items-center justify-between gap-1 h-7 min-w-7 px-2 bg-[rgb(52,125,57)] hover:bg-[rgb(59,134,64)] border border-[rgba(205,217,229,0.15)] rounded-[6px] shadow-[rgba(1,4,9,0.6)_0px_1px_1px_0px,rgba(1,4,9,0.6)_0px_1px_3px_0px] text-white text-[12px] font-medium leading-[18px] cursor-pointer select-none transition-[color,fill,background-color,border-color] duration-[80ms] ease-[cubic-bezier(0.65,0,0.35,1)]">
+                                <button type="submit"
+                                        className="inline-flex items-center justify-between gap-1 h-7 min-w-7 px-2 bg-[rgb(52,125,57)] hover:bg-[rgb(59,134,64)] border border-[rgba(205,217,229,0.15)] rounded-[6px] shadow-[rgba(1,4,9,0.6)_0px_1px_1px_0px,rgba(1,4,9,0.6)_0px_1px_3px_0px] text-white text-[12px] font-medium leading-[18px] cursor-pointer select-none transition-[color,fill,background-color,border-color] duration-[80ms] ease-[cubic-bezier(0.65,0,0.35,1)]">
                                     Save
                                 </button>
 
-                                <button onClick={()=> {
+                                <button onClick={() => {
                                     setIsEdit(false)
                                     setSeeName(name)
                                     setSeeBio(bio)
-                                }} type="button" className="inline-flex items-center justify-between gap-1 h-7 min-w-7 px-2 bg-[rgb(42,49,60)] hover:bg-[rgb(47,55,66)] border border-[rgb(61,68,77)] rounded-[6px] text-[rgb(209,215,224)] text-[12px] font-medium leading-[18px] cursor-pointer select-none transition-[color,fill,background-color,border-color] duration-[80ms] ease-[cubic-bezier(0.65,0,0.35,1)]">
+                                }} type="button"
+                                        className="inline-flex items-center justify-between gap-1 h-7 min-w-7 px-2 bg-[rgb(42,49,60)] hover:bg-[rgb(47,55,66)] border border-[rgb(61,68,77)] rounded-[6px] text-[rgb(209,215,224)] text-[12px] font-medium leading-[18px] cursor-pointer select-none transition-[color,fill,background-color,border-color] duration-[80ms] ease-[cubic-bezier(0.65,0,0.35,1)]">
                                     Cancel
                                 </button>
                             </div>
