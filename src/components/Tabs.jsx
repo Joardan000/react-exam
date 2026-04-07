@@ -21,7 +21,7 @@ export default function Tabs() {
                             to={tab.path}
                             key={tab.id}
                             end={tab.path === "/"}
-                            className="relative cursor-pointer rounded-[6px] flex items-start gap-2 hover:bg-[rgba(101_108_118_/0.2)] px-2 py-[5px]"
+                            className="relative cursor-pointer rounded-[6px] flex items-center gap-2 hover:bg-[rgba(101_108_118_/0.2)] px-2 py-[5px]"
                         >
                             {({isActive}) => (
                                 <>
