@@ -25,7 +25,7 @@ export default function ProfileInfo() {
 
     async function get() {
         try {
-            const res = await customApi('/users/Joardan000')
+            const res = await customApi.get('/users/Joardan000')
 
             setSeeFollowers(res.data.followers)
             setSeeFollowing(res.data.following)

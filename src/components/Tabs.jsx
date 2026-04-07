@@ -6,7 +6,7 @@ import customApi from "../api/useApi.js";
 export default function Tabs() {
     const [seeRepos, setSeeRepos] = useState("")
     async function getData() {
-        const res = await customApi('/users/Joardan000')
+        const res = await customApi.get('/users/Joardan000')
         setSeeRepos(res.data.public_repos)
     }
     useEffect(() => {

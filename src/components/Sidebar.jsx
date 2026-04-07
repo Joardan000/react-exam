@@ -11,7 +11,7 @@ export default function Sidebar({seeActive, close}) {
 
     async function getRepos() {
         try {
-            const res = await customApi('/users/Joardan000/repos?sort=updated&per_page=100')
+            const res = await customApi.get('/users/Joardan000/repos?sort=updated&per_page=100')
             setRepos(res.data)
         } catch (err) {
             console.log(err)

@@ -6,7 +6,7 @@ export default function Overview() {
 
     async function getMocks() {
         try {
-            const res = await customApi('/users/Joardan000/subscriptions')
+            const res = await customApi.get('/users/Joardan000/subscriptions')
             setOverviewMocks(res.data)
         } catch (err) {
             console.log(err)

@@ -13,7 +13,7 @@ export function RightSide({seeRight, close}) {
 
     async function getRightSide() {
         try {
-            const res = await customApi('/users/Joardan000')
+            const res = await customApi.get('/users/Joardan000')
             setSideData(res.data);
         } catch (err) {
             console.log(err)
