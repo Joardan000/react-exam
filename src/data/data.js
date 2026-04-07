@@ -92,23 +92,38 @@ export const exploreItems = [
     {icon: Registry, label: "MCP registry", href: "#"},
 ]
 
+export const languageColors = {
+    JavaScript: "bg-[rgb(241_224_90)]",
+    TypeScript: "bg-[rgb(49_120_198)]",
+    HTML: "bg-[rgb(227_76_38)]",
+    CSS: "bg-[rgb(102_51_153)]",
+    Vue: "bg-[rgb(65_184_131)]",
+    Python: "bg-[rgb(53_114_165)]",
+    React: "bg-[rgb(97_218_251)]",
+    SCSS: "bg-[rgb(198_93_161)]",
+};
+
+export const languages = [
+    'All', 'JavaScript', 'Vue', 'HTML', 'CSS'
+]
+
 export const rightSide1 = [
 
-    {label: "Profile", icon:Profile,url:"https://github.com/Joardan000"},
-    {label: "Repositories", icon: Repositories,url:"https://github.com/Joardan000?tab=repositories"},
-    {label: "Stars", icon: Stars,url:"https://github.com/Joardan000?tab=stars"},
-    {label: "Gists", icon: Gists,url:"https://gist.github.com/Joardan000"},
-    {label: "Organizations", icon: Building,url:"https://github.com/settings/organizations"},
-    {label: "Enterprises", icon: Enterprises,url:"https://github.com/settings/enterprises"},
-    {label: "Sponsors", icon: Sponsors,url:"https://github.com/sponsors/accounts"},
+    {label: "Profile", icon: Profile, url: "https://github.com/Joardan000"},
+    {label: "Repositories", icon: Repositories, url: "https://github.com/Joardan000?tab=repositories"},
+    {label: "Stars", icon: Stars, url: "https://github.com/Joardan000?tab=stars"},
+    {label: "Gists", icon: Gists, url: "https://gist.github.com/Joardan000"},
+    {label: "Organizations", icon: Building, url: "https://github.com/settings/organizations"},
+    {label: "Enterprises", icon: Enterprises, url: "https://github.com/settings/enterprises"},
+    {label: "Sponsors", icon: Sponsors, url: "https://github.com/sponsors/accounts"},
 
 ]
 
 export const rightSide2 = [
-    {label: "Settings", icon: Settings,url:"https://github.com/settings/profile"},
-    {label: "Copilot settings", icon: Copilot,url:"https://github.com/settings/copilot/features" },
-    {label: "Feature preview", icon: Features, badge: Features,url:""},
-    {label: "Appearance", icon: Appearance,url:"https://github.com/settings/appearance"},
-    {label: "Accessibility", icon: Accessibility,url:"https://github.com/settings/accessibility"},
-    {label: "Try Enterprise", icon: Try, badge: Try,url:"https://github.com/account/enterprises/new"}
+    {label: "Settings", icon: Settings, url: "https://github.com/settings/profile"},
+    {label: "Copilot settings", icon: Copilot, url: "https://github.com/settings/copilot/features"},
+    {label: "Feature preview", icon: Features, badge: Features, url: ""},
+    {label: "Appearance", icon: Appearance, url: "https://github.com/settings/appearance"},
+    {label: "Accessibility", icon: Accessibility, url: "https://github.com/settings/accessibility"},
+    {label: "Try Enterprise", icon: Try, badge: Try, url: "https://github.com/account/enterprises/new"}
 ]

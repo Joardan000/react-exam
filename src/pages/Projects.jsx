@@ -1,11 +1,14 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Close from "../assets/close.svg"
 import ProjectIcon from "../assets/projectIcon.svg"
 
 export default function Projects() {
-    const [search, setSearch] = useState("is:open");
     const [activeTab, setActiveTab] = useState("open");
+    const [search, setSearch] = useState(`is:${activeTab}`);
 
+    useEffect(() => {
+        setSearch(`is:${activeTab}`);
+    },[activeTab]);
     return (
         <>
             <section className="mt-6 w-[896px]">
@@ -42,7 +45,7 @@ export default function Projects() {
                         <div className="flex  items-center gap-4">
                             <div
                                 onClick={() => setActiveTab("open")}
-                                className={`flex items-center gap-2 text-[14px] font-semibold py-3 cursor-pointer ${
+                                className={`flex items-center gap-2 text-[13px] font-semibold py-3 cursor-pointer ${
                                     activeTab === "open"
                                         ? "text-[rgb(209_215_224)]"
                                         : "text-[rgb(145_152_161)] hover:text-[rgb(209_215_224)]"
@@ -53,14 +56,14 @@ export default function Projects() {
                             </div>
                             <div
                                 onClick={() => setActiveTab("closed")}
-                                className={`flex items-center gap-2 text-[14px] font-semibold py-3 cursor-pointer ${
+                                className={`flex items-center gap-2 text-[13px] font-semibold py-3 cursor-pointer ${
                                     activeTab === "closed"
                                         ? "text-[rgb(209_215_224)]"
                                         : "text-[rgb(145_152_161)] hover:text-[rgb(209_215_224)]"
                                 }`}
                             >
                                 <span className="hover:underline hover:text-[rgb(71_139_230)]">Closed</span>
-                                <span className="font-medium bg-[rgba(101_108_118/0.2)] rounded-[24px] px-[6px] leading-[18px]">0</span>
+                                <span className="font-medium bg-[rgba(101_108_118/0.2)] rounded-[24px] px-[6px] leading-[18px]">2</span>
                             </div>
                         </div>
                         <button className="flex items-center gap-1 text-[14px] text-[rgb(209_215_224)] font-medium">
@@ -73,9 +76,9 @@ export default function Projects() {
                         </button>
                     </div>
 
-                    <div className="py-[50px] flex flex-col items-center justify-center gap-3">
+                    <div className="py-[50px] flex flex-col items-center justify-center gap-[11px]">
                         <img src={ProjectIcon} alt="project-icon"/>
-                        <p className="text-[rgb(209_215_224)] text-[20px] font-semibold leading-[30px] mb-1">
+                        <p className="text-[rgb(209_215_224)] text-[19px] font-semibold leading-[30px] mb-1">
                             {activeTab === "open" ? "No open projects" : "No closed projects"}
                         </p>
                     </div>

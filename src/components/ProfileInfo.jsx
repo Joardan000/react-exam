@@ -25,15 +25,15 @@ export default function ProfileInfo() {
 
     async function get() {
         try {
-            const res = await customApi.get('/users/Joardan000')
+            const res = await customApi('/users/Joardan000')
 
             setSeeFollowers(res.data.followers)
             setSeeFollowing(res.data.following)
 
             setImg(res.data.avatar_url)
-            setName(res.data.name)
+            setName(localStorage.getItem('name') || res.data.name)
             setLogin(res.data.login)
-            setBio(res.data.bio)
+            setBio(localStorage.getItem('bio') || res.data.bio)
             setSeeName(res.data.name)
             setSeeBio(res.data.bio)
 
@@ -47,11 +47,13 @@ export default function ProfileInfo() {
         setName(seeName)
         setBio(seeBio)
         setIsEdit(false)
+        localStorage.setItem('name', seeName)
+        localStorage.setItem('bio', seeBio)
     }
 
-    useEffect(() => {
-        get()
-    }, [])
+    // useEffect(() => {
+    //     get()
+    // }, [])
 
     return (
         <>

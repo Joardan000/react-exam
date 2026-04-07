@@ -23,7 +23,7 @@ export default function Header(props) {
 
     async function getLogin() {
         try {
-            let res = await customApi.get('/users/Joardan000')
+            let res = await customApi('/users/Joardan000')
             setLogin(res.data.login)
             setImg(res.data.avatar_url)
         } catch (err) {
@@ -31,9 +31,9 @@ export default function Header(props) {
         }
     }
 
-    useEffect(() => {
-        getLogin()
-    }, [])
+    // useEffect(() => {
+    //     getLogin()
+    // }, [])
 
     return (
         <>
