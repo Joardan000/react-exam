@@ -33,11 +33,11 @@ export default function Sidebar({seeActive, close}) {
     }
 
 
-    // useEffect(() => {
-    //     if (seeActive) {
-    //         getRepos()
-    //     }
-    // }, [seeActive])
+    useEffect(() => {
+        if (seeActive) {
+            getRepos()
+        }
+    }, [seeActive])
 
     if (!seeActive) return null
 

@@ -29,9 +29,9 @@ export default function Repositories() {
         }
     }
 
-    // useEffect(() => {
-    //     getRepos();
-    // }, []);
+    useEffect(() => {
+        getRepos();
+    }, []);
 
     const filtered = repos.filter(repo => {
         const matchName = repo.name.toLowerCase().includes(findRepo.toLowerCase())

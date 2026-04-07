@@ -20,9 +20,9 @@ export function RightSide({seeRight, close}) {
         }
     }
 
-    // useEffect(() => {
-    //     getRightSide()
-    // }, []);
+    useEffect(() => {
+        getRightSide()
+    }, []);
     return (
         <>
             {openRight && (

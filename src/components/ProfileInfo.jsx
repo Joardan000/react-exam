@@ -51,9 +51,9 @@ export default function ProfileInfo() {
         localStorage.setItem('bio', seeBio)
     }
 
-    // useEffect(() => {
-    //     get()
-    // }, [])
+    useEffect(() => {
+        get()
+    }, [])
 
     return (
         <>

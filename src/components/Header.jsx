@@ -31,9 +31,9 @@ export default function Header(props) {
         }
     }
 
-    // useEffect(() => {
-    //     getLogin()
-    // }, [])
+    useEffect(() => {
+        getLogin()
+    }, [])
 
     return (
         <>

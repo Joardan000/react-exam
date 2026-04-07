@@ -13,9 +13,9 @@ export default function Overview() {
         }
     }
 
-    // useEffect(()=>{
-    //     getMocks()
-    // },[])
+    useEffect(()=>{
+        getMocks()
+    },[])
     return (
         <>
             <section className="mt-8">

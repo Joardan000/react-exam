@@ -9,9 +9,9 @@ export default function Tabs() {
         const res = await customApi('/users/Joardan000')
         setSeeRepos(res.data.public_repos)
     }
-    // useEffect(() => {
-    //     getData();
-    // },[])
+    useEffect(() => {
+        getData();
+    },[])
     return (
         <section className="bg-[#151B23]">
             <div className="px-4 w-full flex items-center h-11 border-b border-b-[rgba(61_68_77/0.7)]">
