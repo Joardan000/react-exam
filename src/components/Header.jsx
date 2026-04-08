@@ -12,11 +12,13 @@ import {useEffect, useState} from "react";
 import customApi from "../api/useApi.js";
 import {Link} from "react-router-dom";
 import {RightSide} from "./RightSide.jsx";
+import MainSearch from "./MainSearch.jsx";
 
 export default function Header(props) {
     const openFunc = props.open
     const rightOpen = props.toggleSide
     const isRight = props.rightSide
+    const [openMain, setOpenMain] = useState(false)
 
     const [login, setLogin] = useState('')
     const [img, setImg] = useState('')
@@ -50,6 +52,7 @@ export default function Header(props) {
                     <div className="flex items-center gap-2">
                         <div className="flex items-center gap-2">
                             <div
+                                onClick={()=>setOpenMain(true)}
                                 className="cursor-pointer flex text-[rgb(145,152,161)] w-[191px] h-[32px] items-center justify-start border rounded-[6px] px-3 border-[rgb(61_68_77)]">
                                 <img className="mr-2" src={Search} alt="search-icon"/>
                                 <span className="text-[12px] leading-[12px]">
@@ -61,33 +64,33 @@ export default function Header(props) {
                             </span>
                             </div>
                             <div className="flex items-center">
-                                <div className="hover:bg-[rgba(101_108_118/0.15)] cursor-pointer rounded-l-[6px] flex justify-center items-center border border-[rgb(61_68_77)] w-8 h-8">
+                                <a href="https://github.com/copilot" className="hover:bg-[rgba(101_108_118/0.15)] rounded-l-[6px] flex justify-center items-center border border-[rgb(61_68_77)] w-8 h-8">
                                     <img src={Copilot} alt="frog-icon"/>
-                                </div>
-                                <div className="hover:bg-[rgba(101_108_118/0.15)] cursor-pointer -ml-[1px] rounded-r-[6px] flex justify-center items-center border border-[rgb(61_68_77)] w-8 h-8">
+                                </a>
+                                <div className="hover:bg-[rgba(101_108_118/0.15)] cursor-not-allowed -ml-[1px] rounded-r-[6px] flex justify-center items-center border border-[rgb(61_68_77)] w-8 h-8">
                                     <img src={HeaderOption} alt="header-option-icon"/>
                                 </div>
                             </div>
                         </div>
                         <div className="w-[1px] h-5 flex bg-[rgb(61_68_77)] mx-1"></div>
                         <div className="flex items-center gap-2">
-                            <div className="flex gap-1 items-center hover:bg-[rgba(101_108_118/0.15)] cursor-pointer p-2 rounded-[6px] border border-[rgb(61_68_77)]">
+                            <div className="flex gap-1 items-center hover:bg-[rgba(101_108_118/0.15)] cursor-not-allowed p-2 rounded-[6px] border border-[rgb(61_68_77)]">
                                 <img src={PLus} alt="plus-icon"/>
                                 <img src={HeaderOption} alt="header-option-two"/>
                             </div>
                         </div>
-                        <div className="items-center hover:bg-[rgba(101_108_118/0.15)] cursor-pointer p-2 rounded-[6px] border border-[rgb(61_68_77)]">
+                        <a href="https://github.com/issues/assigned" className="items-center hover:bg-[rgba(101_108_118/0.15)] p-2 rounded-[6px] border border-[rgb(61_68_77)]">
                             <img src={Issues} alt="issues-icon"/>
-                        </div>
-                        <div className="items-center hover:bg-[rgba(101_108_118/0.15)] cursor-pointer p-2 rounded-[6px] border border-[rgb(61_68_77)]">
+                        </a>
+                        <a href="https://github.com/pulls" className="items-center hover:bg-[rgba(101_108_118/0.15)] p-2 rounded-[6px] border border-[rgb(61_68_77)]">
                             <img src={PullRequest} alt="pull-request-icon"/>
-                        </div>
-                        <div className="items-center hover:bg-[rgba(101_108_118/0.15)] cursor-pointer p-2 rounded-[6px] border border-[rgb(61_68_77)]">
+                        </a>
+                        <a href="https://github.com/repos" className="items-center hover:bg-[rgba(101_108_118/0.15)] p-2 rounded-[6px] border border-[rgb(61_68_77)]">
                             <img src={Repos} alt="repo-icon"/>
-                        </div>
-                        <div className="items-center hover:bg-[rgba(101_108_118/0.15)] cursor-pointer p-2 rounded-[6px] border border-[rgb(61_68_77)]">
+                        </a>
+                        <a href="https://github.com/notifications" className="items-center hover:bg-[rgba(101_108_118/0.15)] p-2 rounded-[6px] border border-[rgb(61_68_77)]">
                             <img src={Notification} alt="notifications-icon"/>
-                        </div>
+                        </a>
                         <div className="relative">
                             <div onClick={rightOpen} className="cursor-pointer rounded-[50%] border border-[rgb(61_68_77)]">
                                 <img className="w-8 h-8 rounded-[50%]" src={img} alt="avatar-img"/>
@@ -100,6 +103,9 @@ export default function Header(props) {
                     </div>
                 </div>
             </header>
+            {
+                openMain &&(<MainSearch setOpenMain={setOpenMain} />)
+            }
         </>
     )
 }

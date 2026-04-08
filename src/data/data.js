@@ -127,3 +127,15 @@ export const rightSide2 = [
     {label: "Accessibility", icon: Accessibility, url: "https://github.com/settings/accessibility"},
     {label: "Try Enterprise", icon: Try, badge: Try, url: "https://github.com/account/enterprises/new"}
 ]
+
+export const footerLinks = [
+    { label: "Terms", href: "https://docs.github.com/site-policy/github-terms/github-terms-of-service" },
+    { label: "Privacy", href: "https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" },
+    { label: "Security", href: "https://github.com/security" },
+    { label: "Status", href: "https://www.githubstatus.com/" },
+    { label: "Community", href: "https://github.com/orgs/community/discussions" },
+    { label: "Docs", href: "https://docs.github.com/" },
+    { label: "Contact", href: "https://support.github.com/" },
+    { label: "Manage cookies", href: "#" },
+    { label: "Do not share my personal information", href: "#" },
+]

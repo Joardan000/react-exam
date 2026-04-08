@@ -63,7 +63,7 @@ export default function Projects() {
                                 }`}
                             >
                                 <span className="hover:underline hover:text-[rgb(71_139_230)]">Closed</span>
-                                <span className="font-medium bg-[rgba(101_108_118/0.2)] rounded-[24px] px-[6px] leading-[18px]">2</span>
+                                <span className="font-medium bg-[rgba(101_108_118/0.2)] rounded-[24px] px-[6px] leading-[18px]">0</span>
                             </div>
                         </div>
                         <button className="flex items-center gap-1 text-[14px] text-[rgb(209_215_224)] font-medium">

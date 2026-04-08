@@ -21,7 +21,7 @@ export default function Overview() {
             <section className="mt-8">
                 <div className="flex items-center justify-between mb-2">
                     <p className="text-[rgb(209_215_224)] text-base">Popular repositories</p>
-                    <p className="text-[rgb(71_139_230)] text-[12px] leading-[18px] hover:underline">
+                    <p className="cursor-not-allowed text-[rgb(71_139_230)] text-[12px] leading-[18px] hover:underline">
                         Customize your pins
                     </p>
                 </div>

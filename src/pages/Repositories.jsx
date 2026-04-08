@@ -29,7 +29,7 @@ export default function Repositories() {
         }
     }
 
-    useEffect(() => {
+    useEffect(() => {   
         getRepos();
     }, []);
 
