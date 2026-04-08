@@ -49,7 +49,7 @@ export default function Repositories() {
     return (
         <>
             <section className="mt-6">
-                <form className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-4">
                     <input
                         className="bg-[rgb(33_40_48)] border border-[rgb(61_68_77)] focus:border-[rgb(71_139_230)] focus:ring-1 focus:ring-[rgb(71_139_230)] rounded-[6px] leading-5 px-3 py-[5px] w-[535px] text-[13px] text-[rgb(209_215_224)] outline-none"
                         onChange={(e) => setFindRepo(e.target.value)}
@@ -58,6 +58,7 @@ export default function Repositories() {
                         type="text"
                     />
                     <button
+                        type="button"
                         className="flex text-[14px] items-center px-4 justify-center py-[5px] bg-[rgb(42_49_60)] border border-[rgb(61_68_77)] text-[rgb(209_215_224)] font-medium leading-5 rounded-[6px] gap-1">
                         <p>Type</p>
                         <img src={Option} alt="option-icon1"/>
@@ -97,16 +98,18 @@ export default function Repositories() {
                         )}
                     </div>
                     <button
+                        type="button"
                         className="flex text-[14px] items-center px-4 justify-center py-[5px] bg-[rgb(42_49_60)] border border-[rgb(61_68_77)] text-[rgb(209_215_224)] font-medium leading-5 rounded-[6px] gap-1">
                         <p>Sort</p>
                         <img src={Option} alt="option-icon3"/>
                     </button>
                     <button
+                        type="button"
                         className="flex text-[14px] items-center px-4 justify-center py-[5px] bg-[rgb(52_125_57)] border border-[rgba(205_217_229/0.15)] text-white font-medium leading-5 rounded-[6px] gap-1">
                         <img src={New} alt="repos-new-icon"/>
                         <p>New</p>
                     </button>
-                </form>
+                </div>
 
                 <div>
                     {findRepo && (
