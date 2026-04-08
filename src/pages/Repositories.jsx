@@ -64,7 +64,7 @@ export default function Repositories() {
                         <img src={Option} alt="option-icon1"/>
                     </button>
                     <div
-                        onClick={() => setOpenLang(true)}
+                        onClick={() => setOpenLang(!openLang)}
                         className="cursor-pointer relative flex text-[14px] items-center px-4 justify-center py-[5px] bg-[rgb(42_49_60)] border border-[rgb(61_68_77)] text-[rgb(209_215_224)] font-medium leading-5 rounded-[6px] gap-1">
                         <p>Language</p>
                         <img src={Option} alt="option-icon2"/>
