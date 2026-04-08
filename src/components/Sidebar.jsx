@@ -22,16 +22,19 @@ export default function Sidebar({seeActive, close}) {
     }
 
     function filteredRepos(){
-        if(input === "") {
+        if(input === "" || !search) {
             return repos
-        }else if(search === false){
-            return repos
-        }
-        else{
+        } else{
             return repos.filter(repo => repo.full_name.toLowerCase().includes(input.toLowerCase()))
         }
     }
 
+    function closeSidebar() {
+        close()
+        setVisibleCount(5)
+        setSearch(false)
+        setInput("")
+    }
 
     useEffect(() => {
         if (seeActive) {
@@ -42,7 +45,7 @@ export default function Sidebar({seeActive, close}) {
     if (!seeActive) return null
 
     return (
-        <div onClick={() => close(repos)}
+        <div onClick={() => closeSidebar()}
              className="side_anime fixed inset-0 z-[999] flex justify-start bg-[#262C3666]">
             <div
                 onClick={e => e.stopPropagation()}
@@ -51,7 +54,7 @@ export default function Sidebar({seeActive, close}) {
                 <div className="flex items-center justify-between p-4">
                     <img src={GitHub} alt="github-icon" className="w-8 h-8"/>
                     <button
-                        onClick={close}
+                        onClick={closeSidebar}
                         className="rounded-[6px] w-8 h-8 flex items-center justify-center hover:bg-[rgba(101,108,118,0.15)]"
                     >
                         <img src={SideClose} alt="side-close-icon"/>
@@ -91,7 +94,8 @@ export default function Sidebar({seeActive, close}) {
                 <div className="p-4">
                     <div className="flex items-center justify-between mb-2 px-2">
                         <p className="text-[12px] font-semibold text-[rgb(145,152,161)]">Top repositories</p>
-                        <button onClick={()=> {
+                        <button onClick={(e)=> {
+                            e.stopPropagation()
                             setSearch(!search)
                             setInput("")}
                         } className="p-2 rounded-[6px] hover:bg-[rgba(101_108_118/0.15)]">
@@ -128,7 +132,10 @@ export default function Sidebar({seeActive, close}) {
 
                     {visibleCount < repos.length && (
                         <button
-                            onClick={() => setVisibleCount(prev => prev + 5)}
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                setVisibleCount(prev => prev + 5)
+                            }}
                             className="mt-2 px-2 py-[5px] text-[13px] text-[rgb(145,152,161)] hover:text-[rgb(209,215,224)] hover:bg-[rgba(101,108,118,0.15)] rounded-[6px] w-full text-left transition-colors"
                         >
                             Show more
